@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link to css stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Book Shop</title>
+</head>
+
+<body onload="onInit()">
+    <div class="container">
+        <header>
+            <h1 class="page-header">My Bookshop Inventory</h1>
+            <h2 class="header-time"></h2>
+        </header>
+        <section class="books-filters-section">
+            <h3>Filters</h3>
+            <div class="filters">
+                <span class="filter-price">Max Price</span><input type="range" class="price-filter-range" name="price"
+                    min="0" max="999" value="999"
+                    onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})">
+                <span class="filter-rating">Min Rating</span><input type="range" class="rating-filter-range"
+                    name="rating" min="0" max="10" value="0"
+                    onchange="this.title=this.value;onSetFilterBy({minRating: this.value})">
+                <span class="filter-text">Book Name</span><input type="text" class="text-filter-input"
+                    placeholder="type something...." oninput="onSetFilterBy({txt: this.value})">
+            </div>
+        </section>
+
+        <section class="books-content">
+            <div class="content-header">
+                <div class="create-book" onclick="onAddBook()">Create New Book</div>
+                <div class="change-view" onclick="onChangeView()">Table/Cards</div>
+                <div class="paging">
+                    <button class="paging-button prev" onclick="onPrevPage()" disabled="true">Prev</button>
+                    <button class="paging-button next" onclick="onNextPage()">Next</button>
+                </div>
+            </div>
+            <div class="book-modal">
+                <h2 class="modal-book-name"></h2>
+                <hr>
+                <h3><span class="price-head"> Price:</span> $<span class="modal-price"></span></h3>
+                <div class="modal-rating-container"><span class="rating-head">Rating:</span> <span
+                        class="modal-rating"></span></div>
+                <p><span class="description-head">Book description:</span> <br><span class="modal-desc"></span></p>
+                <div class="close-modal-container">
+                    <button class="close-modal-button" title="close" onclick="onCloseModal()">Update</button>
+                </div>
+            </div>
+
+            <table class="books-table">
+                <!-- <thead>
+                    <tr>
+                        <th class="th-id">ID</th>
+                        <th class="th-title">TITLE</th>
+                        <th class="th-price">PRICE</th>
+                        <th class="th-rating">RATING</th>
+                        <th class="th-actions">ACTIONS</th>
+                    </tr>
+                </thead> -->
+                <tbody class="books-table-content"></tbody>
+            </table>
+        </section>
+        <section class="books-cards-content">
+            <!-- <article class="book-preview">
+                <button class="btn-remove">X</button>
+                <h5>Harry Potter</h5>
+                <h6>Price: $<span>100</span></h6>
+                <button class="card-button">Details</button>
+                <button class="card-button">Update Price</button>
+                <img src="images/harry-potter-1.jpg">
+            </article> -->
+        </section>
+    </div>
+
+    <script src="js/services/utils.js"></script>
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/books-service.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

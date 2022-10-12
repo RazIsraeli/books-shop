@@ -1,0 +1,247 @@
+body {
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(192, 181, 181, 0.432);
+  overflow-x: hidden;
+}
+
+table.books-table {
+  border-collapse: collapse;
+  box-shadow: 0px 0px 20px 12px rgba(0, 0, 0, 0.4);
+  border: 3px solid black;
+}
+
+th {
+  max-width: 400px;
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
+
+hr {
+  border: none;
+  border-bottom: 10px dotted rgba(0, 0, 0, 0.404);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+th.th-id,
+th.th-price {
+  width: 80px;
+}
+th.th-title,
+th.th-actions {
+  width: 350px;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.paging {
+  display: flex;
+  gap: 5px;
+}
+
+.create-book {
+  font-weight: 600;
+  color: white;
+  text-align: left;
+  width: fit-content;
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: rgba(70, 70, 233, 0.801);
+  transition: 0.5s;
+}
+.create-book:hover {
+  color: rgba(70, 70, 233, 0.801);
+  /* font-weight: 500; */
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 30px 15px #ffffff;
+}
+
+.change-view {
+  position: relative;
+  left: 30%;
+}
+
+.change-view:hover {
+  cursor: pointer;
+}
+
+.books-content {
+  margin: 10px auto;
+}
+
+.book-name {
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.book-actions {
+  width: 100%;
+}
+
+.book-actions td {
+  border: none;
+}
+
+.book-action,
+.close-modal-button {
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.book-action:hover {
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+.book-read {
+  background-color: rgb(64, 226, 64);
+}
+.book-update {
+  background-color: rgb(67, 235, 221);
+}
+.book-delete {
+  background-color: rgb(245, 65, 65);
+}
+
+.book-modal {
+  position: absolute;
+  top: 160px;
+  left: 150%;
+  height: 500px;
+  max-height: 700px;
+  width: 585px;
+  background-color: rgba(15, 100, 170, 0.85);
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  text-align: left;
+  color: white;
+  transition: 1s;
+}
+
+.book-modal.open {
+  left: 50%;
+  padding-left: 20px;
+}
+
+.book-modal h2 {
+  text-align: center;
+}
+
+.modal-rating-container,
+.description-head {
+  font-weight: 600;
+}
+
+.description-head,
+.price-head,
+.rating-head {
+  text-decoration: underline;
+}
+
+.rating-button {
+  width: 30px;
+  margin: 0 5px;
+}
+
+.close-modal-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+}
+
+.close-modal-button {
+  color: white;
+  width: 80px;
+  background-color: black;
+  border: 2px solid white;
+}
+
+.close-modal-button:hover {
+  cursor: pointer;
+  border: 2px solid red;
+  color: red;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+}
+
+.disabled {
+  color: rgba(0, 0, 0, 0.253);
+}
+.disabled:hover {
+  cursor: not-allowed;
+}
+
+/*  */
+/* Design for cards */
+/*  */
+
+.books-cards-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.book-preview {
+  background-color: white;
+  color: darkviolet;
+  width: 20%;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  border-radius: 0.2em;
+  text-align: center;
+  padding: 5px;
+}
+
+.book-preview .btn-remove {
+  float: right;
+}
+
+.book-preview img {
+  max-width: 100%;
+}
+
+.book-preview h5 {
+  font-size: 1.4em;
+  text-transform: capitalize;
+  /* text-decoration: overline; */
+}
+
+.book-preview h6 span {
+  color: tomato;
+  font-size: 2em;
+}
+
+.card-button {
+  background-color: #222;
+  color: whitesmoke;
+  border: 0;
+  border-radius: 0.2em;
+  padding: 6px 10px;
+  margin: 2px;
+  cursor: pointer;
+}
+.card-button:hover {
+  color: deeppink;
+}
